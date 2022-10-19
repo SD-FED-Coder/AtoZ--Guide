@@ -1,0 +1,19 @@
+<h3 class="title">Left Content</h3>
+
+<p>Counter = {{hello.Counter}}</p>
+<hr>
+<button class="btn btn-success" aria-label="IncreaseButton" (click)="Increase()">Count Increase</button>
+<hr>
+<div>
+  <tr *ngFor="let subject of subjectChild">
+      <td>{{subject.id}}</td>
+      <td>{{subject.name}}</td>
+  </tr>
+</div>
+
+<button class="btn btn-warning" aria-label="firetheEvent" (click)="genrateNumber()">Fire Event!!</button>
+
+<hr>
+<h5 [ngStyle]="{'color' : 'darkblue'}">Custom Pipe Examples:</h5>
+<h6>Square root of 49 is : {{49 | sqrt }}</h6>
+

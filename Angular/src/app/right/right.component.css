@@ -1,0 +1,19 @@
+
+h3{
+  color: white;
+  font-weight: bold;
+}
+.title{
+  border-radius: 10px;
+  text-align: center;
+  background-color: darkblue;
+  height: 50px;
+  padding-top: 5px;
+}
+.navstyle{
+  color: red;
+}
+.avastyle{
+  color: darkgreen;
+}
+

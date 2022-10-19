@@ -1,0 +1,17 @@
+.homepage{
+  text-align: center;
+  margin-top: 16px;
+}
+.container{
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.columnPan{
+  padding-top:10px ;
+  height: 80vh;
+  border:black solid 1px;
+}
+p{
+  margin-left: 34.5%;
+  font-weight:bold ;
+}

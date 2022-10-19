@@ -1,0 +1,29 @@
+<div class="homepage">
+  <h3>I'm in the Home Page <button class="btn btn-success" (click)="gotoContactMe()" aria-label="contactmebtn">Go To Contact Me</button></h3>
+<br>
+</div>
+
+<p>Random Number from child component : {{randomNumber || 'Not Yet Generated'}}</p>
+
+<!--Body Content-->
+<div class = "container">
+<div class="row">
+
+  <div class="col-sm-4 columnPan">
+    <app-left [subjectChild]="subjectParent" (numberGenerate1)="onNumberGenerated($event)"></app-left>
+
+  </div>
+
+  <div class="col-sm-4 columnPan">
+    <app-middle></app-middle>
+  </div>
+
+  <div class="col-sm-4 columnPan">
+    <app-right></app-right>
+  </div>
+
+
+
+</div>
+</div>
+

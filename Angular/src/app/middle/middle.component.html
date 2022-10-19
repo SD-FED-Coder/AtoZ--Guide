@@ -1,0 +1,25 @@
+<h3 class="title">Middle Content</h3>
+<p>Counter = {{hello.Counter}}</p>
+<div>
+  <input type="text" class="form-control" aria-label="bookname" [(ngModel)]="BookName" />
+</div>
+
+<div>
+  <p>Book ID : {{ BookId }}</p>
+</div>
+<div>
+  <p>Book Name : {{ BookName }}</p>
+</div>
+<div>
+  <p>Book Author : {{ BookAuthor }}</p>
+</div>
+<div>
+  <p>Book Status : {{ BookStatus }}</p>
+</div>
+
+<hr />
+
+<div>
+  <button class="btn btn-success" [disabled]="btnToggle" (click)="onToggle()">Toggle</button>
+</div>
+

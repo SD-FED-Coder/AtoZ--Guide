@@ -1,0 +1,38 @@
+<h3 class="title">Right Content</h3>
+<p> Counter =  {{hi.Counter}}</p>
+<button class="btn btn-success" aria-label="hiserviceIncreaseCounter" (click)="Increase()">Increase Seperate Counter</button>
+
+
+<!-- ***ngif and else example ***
+
+<div *ngIf="books1; else nobooks">Books are available!!</div>
+
+<ng-template #nobooks> Books are not available!! </ng-template>-->
+
+<!--ngIf and ngFor examples starts -->
+<p>The Books in stocks:</p>
+<div *ngFor="let item of books; index as i" [ngClass]="{'navstyle': item.bookstatus == 'Not Available', 'avastyle' : item.bookstatus == 'Available'}">
+  {{ i + 1 }} {{ item.bookname | shorten:10 }}
+</div>
+<span>The even order books are:</span>
+<div *ngFor="let item of books; index as i">
+  <div *ngIf="(i + 1) % 2 === 0" [ngStyle]= "{'color' : 'darkblue'}">
+    {{ i + 1 }} {{ item.bookname }}</div>
+</div>
+<!--ngIf and ngFor examples Ends -->
+
+<!--ngSwitch examples starts -->
+<div>
+  <input type="number" class="form-control" aria-label="select-numbers" [(ngModel)]="SelectNumber">
+</div>
+<div [ngSwitch]="SelectNumber">
+  <p *ngSwitchCase="1">Intelligent</p>
+  <p *ngSwitchCase="2"> Brave</p>
+  <p *ngSwitchCase="3">Strong</p>
+  <p *ngSwitchCase="4">Weak</p>
+  <p *ngSwitchCase="5">Fool</p>
+  <p *ngSwitchDefault> Enter the number 1 to 5 </p>
+</div>
+
+
+<!--ngSwitch example ends -->

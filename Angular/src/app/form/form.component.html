@@ -1,0 +1,119 @@
+<h3 class="title">Reactive Form - 'User Details!!'</h3>
+<br /><br />
+<form [formGroup]="userForm"(ngSubmit)="onSubmit()">
+  <div class="container">
+    <div class="row">
+      <div class="col-5" >
+        <div class="form-group">
+          <label for="firstname">FirstName</label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            formControlName="firstname"
+            class="form-control"
+            autocomplete="off"
+          />
+          <span class="help-block" *ngIf="userForm.get('firstname').invalid && userForm.get('firstname').touched">Please Enter a valid first-name!</span>
+          <br>
+          <label for="lastname">LastName</label>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            formControlName="lastname"
+            class="form-control"
+            autocomplete="off"
+          />
+          <span class="help-block" *ngIf="userForm.get('lastname').invalid && userForm.get('lastname').touched">Please Enter a valid last-name!</span>
+          <br>
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            formControlName="email"
+            autocomplete="off"
+            class="form-control"
+          />
+          <span class="help-block" *ngIf="userForm.get('email').invalid && userForm.get('email').touched">Please Enter a valid email!</span>
+          <br>
+          <label for="gender">Gender</label>
+          <div class="custom-control custom-radio">
+            <input
+              type="radio"
+              id="customRadio1"
+              name="customRadio"
+              class="custom-control-input"
+              formControlName="customRadio1"
+              autocomplete="off"
+            />
+            <label class="custom-control-label" for="customRadio1"
+              >Female</label
+            >
+          </div>
+          <div class="custom-control custom-radio">
+            <input
+              type="radio"
+              id="customRadio2"
+              name="customRadio"
+              class="custom-control-input"
+              formControlName="customRadio2"
+              autocomplete="off"
+            />
+            <label class="custom-control-label" for="customRadio2">Male</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-5" >
+        <div class="form-group" formGroupName="address">
+          <label for="country">Country</label>
+          <select
+            id="country"
+            name="country"
+            formControlName="country"
+            class="form-control"
+            autocomplete="off"
+          >
+            <option *ngFor="let item of countryList">
+              {{ item.countryName }}
+            </option>
+          </select>
+          <label for="city">City</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            class="form-control"
+            formControlName="city"
+            autocomplete="off"
+          />
+          <label for="street">Street</label>
+          <input
+            type="text"
+            id="street"
+            name="street"
+            class="form-control"
+            formControlName="street"
+            autocomplete="off"
+          />
+          <label for="pincode">Pincode</label>
+          <input
+            type="number"
+            id="pincode"
+            name="pincode"
+            class="form-control"
+            formControlName="pincode"
+            autocomplete="off"
+          />
+
+        </div>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <button type = "submit" class="btn btn-info" [disabled]="!userForm.valid" >Submit form</button>
+    </div>
+  </div>
+</form>
